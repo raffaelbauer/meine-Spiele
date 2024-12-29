@@ -5,83 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Eigenen Spiele</title>
     <style>
+        /* Grundlegendes Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
-            color: #333;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #444;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         header {
-            background: #6EC1E4;
+            background-color: #ff6f61;
             color: white;
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            border-radius: 0 0 20px 20px;
+            width: 100%;
+            clip-path: ellipse(60% 100% at 50% 0);
         }
 
         header h1 {
-            font-size: 2rem;
+            font-size: 3rem;
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            animation: fadeIn 2s ease-out;
         }
 
+        header p {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Hauptbereich mit asymmetrischem Layout */
         section {
-            text-align: center;
-            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .game {
             background-color: white;
-            margin: 20px auto;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.7s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .game:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
         .game h2 {
-            font-size: 1.5rem;
-            margin: 0 0 10px 0;
+            font-size: 1.6rem;
+            color: #ff6f61;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .game h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 5px;
+            background-color: #ff6f61;
+            border-radius: 5px;
         }
 
         .game p {
             font-size: 1.1rem;
-            margin: 0 0 20px 0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #555;
         }
 
         .game a {
             display: inline-block;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: white;
             text-decoration: none;
-            background-color: #6EC1E4;
-            padding: 10px 20px;
+            background-color: #ff6f61;
+            padding: 12px 24px;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: fit-content;
         }
 
         .game a:hover {
-            background-color: #5AAFD0;
+            background-color: #e04e45;
+            transform: scale(1.05);
         }
 
+        /* Footer Styling */
         footer {
-            background: #333;
+            background-color: #222;
             color: white;
+            width: 100%;
+            padding: 2rem 0;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
         }
 
         footer a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
         footer a:hover {
             text-decoration: underline;
+            color: #ff6f61;
         }
     </style>
 </head>
