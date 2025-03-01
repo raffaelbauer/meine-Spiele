@@ -16,6 +16,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         header {
@@ -57,6 +58,7 @@
             padding: 3rem;
             width: 100%;
             max-width: 1200px;
+            flex-grow: 1;
         }
 
         .game {
@@ -128,20 +130,16 @@
 
         /* Footer Styling */
         footer {
-            background-color: #222;
             color: white;
-            width: 100%;
-            padding: 2rem 0;
             text-align: center;
             font-size: 0.9rem;
-            position: relative;
-            bottom: 0;
+            width: 100%;
+            margin-top: auto;
         }
 
         footer a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
         }
 
         footer a:hover {
@@ -170,7 +168,9 @@
 
 <footer>
     <p>&copy; 2025 Raffael Bauer. Alle Rechte vorbehalten.</p>
-    <p><a href="https://raffaelbauer.github.io/Impressum/">Impressum</a> | <a href="https://raffaelbauer.github.io/Datenschutzbestimmungen/">Datenschutzbestimmungen</a></p>
+    <p>
+        <a href="https://raffaelbauer.github.io/Datenschutzerklaerung/">Datenschutzbestimmungen</a>
+    </p>
 </footer>
 
 </body>
